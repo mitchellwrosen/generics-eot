@@ -12,7 +12,7 @@ maintainer:     soenkehahn@gmail.com
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
+cabal-version:  >= 2.0
 
 extra-source-files:
     README.md
@@ -28,6 +28,8 @@ library
   build-depends:
       base == 4.*
     , markdown-unlit
+  build-tool-depends:
+      markdown-unlit:markdown-unlit
   exposed-modules:
       Generics.Eot
       Generics.Eot.Tutorial
@@ -54,6 +56,8 @@ test-suite quickcheck
     , directory
     , filepath
     , QuickCheck
+  build-tool-depends:
+      markdown-unlit:markdown-unlit
   other-modules:
       DatatypeSpec
       Generics.Eot
@@ -77,6 +81,8 @@ test-suite spec
     , QuickCheck
     , interpolate
     , doctest
+  build-tool-depends:
+      markdown-unlit:markdown-unlit
   other-modules:
       Examples.CatamorphismsSpec
       Examples.DocsSpec
